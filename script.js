@@ -5,13 +5,12 @@ class Navegador{
         this.actual = null;
     }
     visitar(pagina){
-        if(this.actual){
+        if(this.actual !==null){
          this.pilaAtras.push(this.actual);
-
-         this.actual = pagina;
          this.pilaAdelante = [];
-         console.log("visitando: ", this.actual);
         }
+        this.actual = pagina;
+         console.log("visitando: ", this.actual);
     }
     atras(){
         if(this.pilaAtras.length === 0){
@@ -25,7 +24,7 @@ class Navegador{
     }
     adelante(){
         if(this.pilaAdelante.length === 0){
-            console.log("no hay paginas adelante")
+            console.log("no hay paginas adelante, crear una nueva pagina")
             return;
         }
         this.pilaAtras.push(this.actual);
@@ -33,3 +32,12 @@ class Navegador{
         console.log("pagina actual: ",this.actual);
     }
 }
+
+const nav = new Navegador();
+nav.visitar("google.com");
+nav.visitar("doramasflix");
+nav.visitar("facebook.com");
+
+nav.atras();
+nav.adelante();
+nav.adelante()
