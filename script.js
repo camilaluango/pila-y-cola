@@ -22,7 +22,14 @@ class Navegador{
         this.actual = this.pilaAtras.pop();
         console.log("pagina actual: ",this.actual);
     
-
-
+    }
+    adelante(){
+        if(this.pilaAdelante.length === 0){
+            console.log("no hay paginas adelante")
+            return;
+        }
+        this.pilaAtras.push(this.actual);
+        this.actual = this.pilaAdelante.pop();
+        console.log("pagina actual: ",this.actual);
     }
 }
