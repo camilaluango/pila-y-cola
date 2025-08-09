@@ -13,4 +13,16 @@ class Navegador{
          console.log("visitando: ", this.actual);
         }
     }
+    atras(){
+        if(this.pilaAtras.length === 0){
+            console.log("No hay paginas atras");
+            return;
+        }
+        this.pilaAdelante.push(this.actual);
+        this.actual = this.pilaAtras.pop();
+        console.log("pagina actual: ",this.actual);
+    
+
+
+    }
 }
